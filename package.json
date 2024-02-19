@@ -1,5 +1,5 @@
 {
-  "name": "proto-parser",
+  "name": "@lukesheard/proto-parser",
   "version": "0.0.9",
   "description": "A parser for proto files",
   "main": "index.js",
