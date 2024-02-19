@@ -635,10 +635,10 @@ class MethodDefinition extends ReflectionObject {
 
     this.requestType = getFieldType(requestType);
     /* istanbul ignore next */
-    this.requestStream = requestStream ? true : undefined;
+    this.requestStream = !!requestStream;
     this.responseType = getFieldType(responseType);
     /* istanbul ignore next */
-    this.responseStream = responseStream ? true : undefined;
+    this.responseStream = !!responseStream;
     this.comment = comment;
   }
 
@@ -653,7 +653,7 @@ class MethodDefinition extends ReflectionObject {
     const json = ReflectionObject.prototype.toJson.call(this);
     Object.assign(
       json,
-      copyObject(this, ['type', 'requestType', 'responseType'])
+      copyObject(this, ['type', 'requestType', 'responseType', 'requestStream', 'responseStream'])
     );
     return json;
   }
